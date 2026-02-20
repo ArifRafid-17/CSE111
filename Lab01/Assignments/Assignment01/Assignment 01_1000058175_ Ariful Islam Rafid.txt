@@ -1,0 +1,117 @@
+//Question01
+
+import java.util.Scanner;
+public class Lab1Question1 {
+  public static void main(String [] args){
+    Scanner sc = new Scanner(System.in);
+    int num1 = sc.nextInt();
+    int num2 = sc.nextInt();
+    int PrimeNum=0;
+    boolean flag = false;
+
+    if(num1>num2){
+        int temp = num1;
+        num1=num2;
+        num2 = temp;
+    }
+
+    for(int i = num1; i<=num2; i++){
+        if(i!=0 || i!=1){
+          
+            for(int j=2; j<i ; j++){
+                if(i%j==0){
+                    flag=true;
+                    break;
+                }
+            }
+
+            if(!flag){
+                PrimeNum++;
+            }
+
+            flag=false;
+                
+        }
+    }
+
+       System.out.println("There are "+ PrimeNum+" prime numbers between "+num1+" and "+ num2);
+  }
+}
+
+//Question02
+
+
+import java.util.Scanner;
+public class Lab1Question2 {
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        String words = sc.nextLine();
+
+        String result ="";
+
+        for(int i=0; i<words.length(); i++){
+            char c1= words.charAt(i);
+            char c2;
+            if(c1=='a'){
+                c2='z';
+            }
+            else{
+                int ascii= (int)c1;
+                int newAscii= ascii-1;
+                c2 = (char)newAscii;
+                
+            }
+            result+=c2;
+            
+        }
+
+        System.out.println(result);
+    }
+}
+
+//Question03
+
+import java.util.Scanner;
+
+public class Lab1Question3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("N= ");
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        boolean[] flag = new boolean[N];
+        int count = 0;
+
+        for (int i = 0; i < N; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < N; i++) {
+            if (flag[i]) {
+                continue;
+            }
+
+            for (int j = 0; j < N; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    flag[j] = true;
+                }
+
+            }
+
+            System.out.println(arr[i] + " - " + count);
+            count = 0;
+        }
+
+    }
+}
+
+
+//Question04
+
+public class CSECourse {
+    String courseName="Programming Language II";
+    String courseCode="CSE111";
+    int credit = 3;
+}
+
